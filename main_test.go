@@ -13,6 +13,7 @@ func TestCreatePolicy(t *testing.T) {
 	}
 
 	lis := CreatePolicies(input)
+	t.Log(lis)
 
 	s, _ := json.Marshal(lis)
 	t.Logf("%s", s)

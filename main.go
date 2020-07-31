@@ -53,6 +53,10 @@ func (p *policy) SetValue(value string) *policy {
 	return p
 }
 
+func (p *policy) String() string {
+	return fmt.Sprintf("%v %v = %v\n", p.Op, strings.Join(p.Path, "/"), p.Value)
+}
+
 func (p *policy) CloneExtend(path ...string) *policy {
 	lis := make([]string, len(p.Path)+len(path))
 	copy(lis, p.Path)
